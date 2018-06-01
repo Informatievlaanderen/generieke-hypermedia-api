@@ -16,6 +16,6 @@ Wil je fysiek mee aanwezig zijn? Er zijn nog publieke workshops gepland in juni:
  
 ## Scope
 
-Met honderden lokale besturen en administraties die verschillende producten of diensten leveren aan burgers en ondernemingen met behulp van toepassingen van verschillende diesntenleveranciers is er naast semantische interoperabiliteit van data ook nood aan interoperabiliteit van API’s zelf, en de methoden en operaties die gebruikt worden om de data die erdoor ontsloten wordt te bevragen en bewerken.
+Met honderden lokale besturen en administraties die verschillende producten of diensten leveren aan burgers en ondernemingen met behulp van toepassingen van verschillende dienstenleveranciers is er naast semantische interoperabiliteit van data ook nood aan interoperabiliteit van API’s zelf, en de methoden en operaties die gebruikt worden om de data die erdoor ontsloten wordt te bevragen en bewerken.
 
 Een Generieke Hypermedia API beschrijft in elke response de verdere stappen die vanaf dat punt kunnen worden genomen. Een generieke client herkent op zijn beurt bepaalde bouwblokken en kan daar mee verder aan de slag. Op welke bouwblokken we kunnen rekenen binnen Vlaanderen, wordt gespecificeerd in deze werkgroep.
