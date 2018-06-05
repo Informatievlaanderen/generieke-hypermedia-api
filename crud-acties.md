@@ -1,6 +1,6 @@
 Discussie: #6
 
-#CRUD acties
+# CRUD acties
 
 CRUD of Create, Read, Update & Delete zijn de vier basisoperaties die op resources kunnen worden uitgevoerd.
 * Create: aanmaken van een nieuwe resource
@@ -13,8 +13,8 @@ Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat C
 + [Linked Data Platform](https://www.w3.org/TR/ldp/)
 + [Hydra](http://www.hydra-cg.com/spec/latest/core/)
 
-##Code voorbeelden
+## Code voorbeelden
 
-###Linked Data Platform
+### Linked Data Platform
 
-##Herbruikbare library
+## Herbruikbare library

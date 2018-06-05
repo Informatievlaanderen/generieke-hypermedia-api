@@ -1,7 +1,7 @@
 Discussie: #1
 Open: Hoe omgaang met gepagineerde CSV downoads? (#12)
 
-#Server-side paginering
+# Server-side paginering
 
 Server-side paginering wordt gebruikt om grote datasets die ontsloten worden via API's op te delen in kleinere result sets om zo een lagere initiële laadtijd te bekomen voor afnemers.
 
@@ -11,9 +11,9 @@ Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat v
 + [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
 + [Hypertext Application Language (HAL) Internet Draft](http://stateless.co/hal_specification.html)
 
-##Code voorbeelden
+## Code voorbeelden
 
-###RFC 5988 - Web Linking
+### RFC 5988 - Web Linking
 
 De HTTP Link header bevat informatie voor paginering.
 
@@ -33,11 +33,11 @@ Volgende relaties worden ondersteund:
 | `prev`      | Link relatie voor de vorige pagina met resulaten    |
 | `previous`  | Synoniem voor `prev`                                |
 
-###Hydra
+### Hydra
 
 De JSON(-LD) respons bevat informatie voor paginering op basis van het Hydra vocabularium.
 
-```
+```json
 {
   "@context": "http://www.w3.org/ns/hydra/context.jsonld",
   "@id": "https://hostname/api/resource?page=3",
@@ -60,11 +60,11 @@ De JSON(-LD) respons bevat informatie voor paginering op basis van het Hydra voc
 }
 ```
 
-##HAL
+## HAL
 
 De JSON of XML respons bevat informatie voor paginering in een `_links` node.
 
-```
+```json
 {
     "_links": {
         "self": {
@@ -102,7 +102,7 @@ De JSON of XML respons bevat informatie voor paginering in een `_links` node.
 }
 ```
 
-##Algoritme voor paginering
+## Algoritme voor paginering
 
 Onderstaande reeks stappen definieert een algoritme die door een generieke client kan worden toegepast om gebruik te maken van paginering.
 
@@ -110,6 +110,6 @@ Onderstaande reeks stappen definieert een algoritme die door een generieke clien
 2. Anders, als de response een `_links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
 3. Anders, als de response op root-level een `@type` key (JSON-LD) of `http://www.w3.org/1999/02/22-rdf-syntax-ns#type` predikaat (RDF Triples) heeft met als waarde `PartialCollection` of `http://www.w3.org/ns/hydra/core#PartialCollection`, gebruik de `next`, `last`, `first` of `previous` attributen om de paginering te initialiseren.
 
-##Herbruikbare library
+## Herbruikbare library
 
 https://github.com/pietercolpaert/extract-page-controls
