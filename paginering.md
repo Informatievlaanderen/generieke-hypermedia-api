@@ -37,28 +37,7 @@ Volgende relaties worden ondersteund:
 
 De JSON(-LD) respons bevat informatie voor paginering op basis van het Hydra vocabularium.
 
-```json
-{
-  "@context": "http://www.w3.org/ns/hydra/context.jsonld",
-  "@id": "https://hostname/api/resource?page=3",
-  "@type": "PartialCollection",
-  "next": "/api/resource?page=4",
-  "last": "/api/resource?page=50",
-  "first": "/api/resource",
-  "previous": "/api/resource?page=2",
-  "totalItems": 2,
-  "member": [
-      {
-          "@id": "/api/resource/5",
-          ...
-      },
-      {
-          "@id": "/api/resource/6",
-          ...
-      }
-  ]
-}
-```
+__TODO__
 
 ## HAL
 
