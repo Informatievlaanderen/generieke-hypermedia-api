@@ -1,4 +1,4 @@
-Discussie: #6
+Discussie: [#6](https://github.com/pietercolpaert/generieke-hypermedia-api/issues/6)
 
 # CRUD acties
 

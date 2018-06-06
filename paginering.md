@@ -1,5 +1,5 @@
-Discussie: #1
-Open: Hoe omgaang met gepagineerde CSV downoads? (#12)
+Discussie: [#1](https://github.com/pietercolpaert/generieke-hypermedia-api/issues/1)
+Open: Hoe omgaang met gepagineerde CSV downoads? ([#12](https://github.com/pietercolpaert/generieke-hypermedia-api/issues/12))
 
 # Server-side paginering
 
@@ -25,6 +25,7 @@ Link: 	<https://hostname/api/resource?page=4&limit=100>; rel="next",
 ```
 
 Volgende relaties worden ondersteund:
+
 | Naam        | Omschrijving                                        |
 | ----------- |:---------------------------------------------------:|
 | `next`      | Link relatie voor de volgende pagina met resultaten |
