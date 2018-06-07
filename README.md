@@ -23,5 +23,5 @@ Een Generieke Hypermedia API beschrijft in elke response de verdere stappen die 
 ## Bouwblokken
 
 * [Paginering](paginering.md)
-* [CRUD acties](crud-acties.md)
+* [CRUD operaties](crud-operaties.md)
 * ...
