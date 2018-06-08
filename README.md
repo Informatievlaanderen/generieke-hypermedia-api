@@ -24,4 +24,12 @@ Een Generieke Hypermedia API beschrijft in elke response de verdere stappen die 
 
 * [Paginering](paginering.md)
 * [CRUD operaties](crud-operaties.md)
+* [Graph queries](graph-queries.md)
+* [Full text search](full-text-search.md)
+* [Geo-spatial features](geospatial.md)
+* [Authenticatie, signing en authorisatie](authenticatie.md)
+* [Taal-selectie/ontdekking](taal.md)
+* [Versionering](versionering.md)
+* [Metadatering](metadatering.md)
+* [Tijdsannotatie](tijdsannotatie.md)
 * ...
