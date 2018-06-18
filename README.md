@@ -6,7 +6,7 @@ __Eerste draft gepland: juli 2018__
 
 ## Discussieer mee
 
-Via de issue tracker kan je online mee discussiëren over wat in de specificatie moet en wat niet: https://github.com/pietercolpaert/generieke-hypermedia-api/issues
+Via de issue tracker kan je online mee discussiëren over wat in de specificatie moet en wat niet: https://github.com/informatievlaanderen/generieke-hypermedia-api/issues
 
 Wil je fysiek mee aanwezig zijn? Er zijn nog publieke workshops gepland in juni:
  * 2018-06-11 van 13:00 tot 14:30 - Herman Teirlinck - 01.71 - Frans Breziers
