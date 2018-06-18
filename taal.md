@@ -66,7 +66,7 @@ RDF response:
                                      "Ghent"@en-us.
 ```
 
-## Algoritme voor herkennen van crud operaties
+## Algoritme voor language negotiation
 
 https://www.ietf.org/rfc/rfc4647.txt
 
