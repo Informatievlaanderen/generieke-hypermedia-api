@@ -7,6 +7,16 @@ Mogelijke te ondersteunen standaarden:
 * HTTP `ACCEPT-LANGUAGE` header
 * [RDF Language tagged strings](https://www.w3.org/TR/rdf11-concepts/#dfn-language-tagged-string)
 
+## Nakomingsniveaus
+
+### HTTP
+
+__TODO__
+
+### Semantisch
+
+__TODO__
+
 ## Code voorbeelden
 
 __TODO__

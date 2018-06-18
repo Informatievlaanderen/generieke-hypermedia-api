@@ -4,6 +4,16 @@ Discussie: [#10](https://github.com/pietercolpaert/generieke-hypermedia-api/issu
 
 __TODO__
 
+## Nakomingsniveaus
+
+### HTTP
+
+__TODO__
+
+### Semantisch
+
+__TODO__
+
 ## Code voorbeelden
 
 __TODO__
