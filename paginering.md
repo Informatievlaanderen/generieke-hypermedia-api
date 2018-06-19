@@ -17,6 +17,8 @@ Daarnaast _MAG_ een server volgende methodes ondersteunen:
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
 + [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
 
+Deze specificatie doet geen uitspraken over de paginering strategie van een server. Zo kunnen onder meer cursor-, offset- of pagina gebaseerde paginering strategieën gebruikt worden.
+
 ## Code voorbeelden
 
 ### RFC 5988 - Web Linking
@@ -124,4 +126,4 @@ Onderstaande reeks stappen definieert een algoritme die door een generieke clien
 
 ## Herbruikbare library
 
-https://github.com/pietercolpaert/extract-page-controls
+- Voor clients: https://github.com/pietercolpaert/extract-page-controls
