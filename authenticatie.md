@@ -8,7 +8,17 @@ Een server _MOET_ ondersteuning bieden voor volgende specificaties:
 
 * [RFC 7235 - Hypertext Transfer Protocol (HTTP/1.1): Authentication](https://tools.ietf.org/html/rfc7235#section-4.1)
 
+Daarnaast _MAG_ een server volgende methodes ondersteunen:
+
++ __TODO__
+
+Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
+
++ __TODO__
+
 ## Code voorbeelden
+
+De WWW-Authenticate header bevat informatie over het te gebruiken authenticatie schema. De mogelijke authenticatie schema's zijn gedefinieerd in het [Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry](https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)
 
 ```
 HTTP/1.1 401 Unauthorized  
