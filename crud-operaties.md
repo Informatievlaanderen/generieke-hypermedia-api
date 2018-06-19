@@ -8,9 +8,18 @@ CRUD of Create, Read, Update & Delete zijn de vier basisoperaties die op resourc
 * Update: wijzigen van gegevens over een specifieke resource
 * Delete: verwijderen van een resource
 
-Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat CRUD acties te herkennen die toegelaten zijn op een bepaalde resource, gebruik makend van de volgende standaarden:
+Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat CRUD acties te herkennen die toegelaten zijn op een bepaalde resource.
+
+Een server _MOET_ ondersteuning bieden voor volgende methodes:
 
 + [Linked Data Platform](https://www.w3.org/TR/ldp/)
+
+Daarnaast _MAG_ een server volgende methodes ondersteunen:
+
++ [Hydra](http://www.hydra-cg.com/spec/latest/core/)
+
+Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
+
 + [Hydra](http://www.hydra-cg.com/spec/latest/core/)
 
 ## Code voorbeelden
