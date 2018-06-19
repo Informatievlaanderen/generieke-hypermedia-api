@@ -33,3 +33,12 @@ Een Generieke Hypermedia API beschrijft in elke respons de verdere stappen die v
 * [Metadatering](metadatering.md)
 * [Tijdsannotatie](tijdsannotatie.md)
 * ...
+
+## Terminologie
+
+| Term        | Omschrijving                                        |
+| ----------- |:---------------------------------------------------:|
+| API         | Een 'Application Programming Interface' is een set van methoden dat de communicatie tussen verschillende software componenten toelaat |
+| Client      | Een persoon of machine die gebruik wil maken van een bepaalde service, aangeboden door een server via een API. Een client neemt het initiatief tot communicatie met de server. |
+| Hypermedia  | Hypermedia wordt gebruikt als een medium en restrictie voor API's Binnen de REST applicatie architectuur laat hypermedia toe dat een client en server interageren louter op basis van de hypermedia die dynamisch door de server wordt meegegeven in de respons. |
+| Server      | Biedt één of meerdere clients services aan die via een bepaalde communicatieprotocol ter beschikking gesteld worden. Een server beantwoord vragen van clients met een bepaalde respons. |
