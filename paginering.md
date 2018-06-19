@@ -1,15 +1,21 @@
 Discussie: [#1](https://github.com/pietercolpaert/generieke-hypermedia-api/issues/1)
-Open: Hoe omgaang met gepagineerde CSV downoads? ([#12](https://github.com/pietercolpaert/generieke-hypermedia-api/issues/12))
 
 # Server-side paginering
 
-Server-side paginering wordt gebruikt om grote datasets die ontsloten worden via API's op te delen in kleinere result sets om zo een lagere initiële laadtijd te bekomen voor afnemers.
+Server-side paginering wordt gebruikt om datasets die ontsloten worden via API's op te delen in kleinere result sets om zo een lagere initiële laadtijd te bekomen voor afnemers.
 
-Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat volgende methodes voor paginering te herkennen en gebruiken:
+Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat een aantal methodes voor paginering te herkennen en gebruiken.
 
+Een server _MOET_ ondersteuning bieden voor volgende methodes:
 + [RFC 5988 - Web Linking](https://tools.ietf.org/html/rfc5988)
+
+Daarnaast _MAG_ een server volgende methodes ondersteunen:
 + [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
 + [Hypertext Application Language (HAL) Internet Draft](http://stateless.co/hal_specification.html)
++ [JSON API Pagination](http://jsonapi.org/format/#fetching-pagination)
+
+Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
++ [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
 
 ## Code voorbeelden
 
@@ -67,28 +73,54 @@ De JSON of XML respons bevat informatie voor paginering in een `_links` node.
     "total": 100,
     "_embedded": [
       {
-		"_links": {
+		    "_links": {
         	"self": { "href": "/api/resource/5" }
-        },
-        ...
+        }
       },
       {
-		"_links": {
+		    "_links": {
         	"self": { "href": "/api/resource/6" }
-        },
-        ...
+        }
       }
     ]
 }
 ```
 
-## Algoritme voor paginering
+## JSON API
+
+De JSON respons bevat informatie voor paginering in een `links` node.
+
+```json
+{
+    "links": {
+        "self": "/api/resource?page=3",
+        "first": "/api/resource",
+        "prev": "/api/resource?page=2",
+        "next": "/api/resource?page=4",
+        "last": "/api/resource?page=5"
+    },
+    "meta": {
+      "total-pages": 100
+    },
+    "data": [
+      {
+        "id": "/api/resource/5"
+      },
+      {
+        "id": "/api/resource/6"
+      }
+    ]
+}
+```
+
+## Client algoritme voor paginering
 
 Onderstaande reeks stappen definieert een algoritme die door een generieke client kan worden toegepast om gebruik te maken van paginering.
 
 1. Als de Link headers een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
-2. Anders, als de response een `_links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
-3. Anders, als de response op root-level een `@type` key (JSON-LD) of `http://www.w3.org/1999/02/22-rdf-syntax-ns#type` predikaat (RDF Triples) heeft met als waarde `PartialCollection` of `http://www.w3.org/ns/hydra/core#PartialCollection`, gebruik de `next`, `last`, `first` of `previous` attributen om de paginering te initialiseren.
+2. Anders, als de response een `_links` node bevat met als keys `next`, `last`, `first` of `prev`, gebruik de corresponderende waarde om de paginering te initialiseren.
+3. Anders, als de response een `links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
+4. Anders, als de response op root-level een `@type` key (JSON-LD) of `http://www.w3.org/1999/02/22-rdf-syntax-ns#type` predikaat (RDF Triples) heeft met als waarde `PartialCollection` of `http://www.w3.org/ns/hydra/core#PartialCollection`, gebruik de `next`, `last`, `first` of `previous` attributen om de paginering te initialiseren.
 
 ## Herbruikbare library
 
