@@ -18,18 +18,18 @@ aangezien clients hier geen interpretatie van (zouden) moeten doen.
 
 ### HTTP
 
-Voor het toelaten van de **detectie** van de taal van een resource dient
+Voor het toelaten van de **detectie** van de taal van een resource _MOET_
 een [`Content-Language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language)
 HTTP header beschikbaar te zijn voor de resource binnen een server response.
 
-Voor het toelaten van de **selectie** van de taal van een resource dient
+Voor het toelaten van de **selectie** van de taal van een resource _MOET_
 een server de [`Accept-Language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language)
 in de client request correct te behandelen, zodat [_HTTP language negotiation_](https://www.w3.org/International/questions/qa-when-lang-neg)
 kan plaats vinden.
 
 ### Semantisch
 
-Voor het toelaten van de **detectie** van de taal van een resource dient
+Voor het toelaten van de **detectie** van de taal van een resource _MOET_
 tekst geannoteerd te zijn met een taal door middel van [RDF language tagged strings](https://www.w3.org/TR/rdf11-concepts/#dfn-language-tagged-string).
 
 Voor de selectie van een taal schrijven we op semantisch niveau geen vereisten voor.
@@ -64,6 +64,20 @@ RDF response:
 ```
 <http://example.org/gent> rdfs:label "Gent"@nl-be
                                      "Ghent"@en-us.
+```
+
+JSON-LD response:
+```
+{
+  "@context": {
+  	"label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@container": "@language" }
+  },
+  "@id": "/api/resource/1",
+  "label": {
+  	"nl-be": "Gent",
+  	"en-us": "Ghent"
+  }
+}
 ```
 
 ## Algoritme voor language negotiation

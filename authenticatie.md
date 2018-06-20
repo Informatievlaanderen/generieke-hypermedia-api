@@ -4,13 +4,15 @@ Discussie: [#7](https://github.com/pietercolpaert/generieke-hypermedia-api/issue
 
 Om gebruik te maken van bepaalde API methoden en operaties is het vaak noodzakelijk dat een client zich authenticeert. _Authenticatie_ laat de server toe om een client uniek te identificeren en bijkomend de authorisaties van de client op te halen. _Authorisaties_ bepalen welke methoden en operaties aangeboden worden door de API aan een client. _Signing_ laat een client toe elke request naar een server te ondertekenen om zo zijn identiteit te bewijzen.
 
+## Nakomingsniveaus
+
+### HTTP
+
 Een server _MOET_ ondersteuning bieden voor volgende specificaties:
 
 * [RFC 7235 - Hypertext Transfer Protocol (HTTP/1.1): Authentication](https://tools.ietf.org/html/rfc7235#section-4.1)
 
-Daarnaast _MAG_ een server volgende methodes ondersteunen:
-
-+ __TODO__
+### Semantisch
 
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
 

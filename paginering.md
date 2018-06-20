@@ -4,20 +4,28 @@ Discussie: [#1](https://github.com/pietercolpaert/generieke-hypermedia-api/issue
 
 Server-side paginering wordt gebruikt om datasets die ontsloten worden via API's op te delen in kleinere result sets om zo een lagere initiële laadtijd te bekomen voor afnemers.
 
-Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat een aantal methodes voor paginering te herkennen en gebruiken.
+Deze specificatie beschrijft een abstract algoritme dat een generieke client toelaat een aantal methodes voor paginering te herkennen en gebruiken.
+
+**Opmerking**: deze specificatie doet geen uitspraken over de paginering strategie van een server. Zo kunnen onder meer cursor-, offset- of pagina gebaseerde paginering strategieën gebruikt worden.
+
+## Nakomingsniveaus
+
+### HTTP
 
 Een server _MOET_ ondersteuning bieden voor volgende methodes:
+
 + [RFC 5988 - Web Linking](https://tools.ietf.org/html/rfc5988)
 
-Daarnaast _MAG_ een server volgende methodes ondersteunen:
-+ [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
-+ [Hypertext Application Language (HAL) Internet Draft](http://stateless.co/hal_specification.html)
-+ [JSON API Pagination](http://jsonapi.org/format/#fetching-pagination)
+### Semantisch
 
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
+
 + [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
 
-Deze specificatie doet geen uitspraken over de paginering strategie van een server. Zo kunnen onder meer cursor-, offset- of pagina gebaseerde paginering strategieën gebruikt worden.
+Daarnaast _MAG_ een server volgende methodes ondersteunen:
+
++ [Hypertext Application Language (HAL) Internet Draft](http://stateless.co/hal_specification.html)
++ [JSON API Pagination](http://jsonapi.org/format/#fetching-pagination)
 
 ## Code voorbeelden
 

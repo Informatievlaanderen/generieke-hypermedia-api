@@ -14,15 +14,15 @@ Dit is echter niet altijd het geval, zoals bijvoorbeeld [git commits](https://gi
 die versies van een project aanduiden via een alfanumerieke _hash_.
 
 **Opmerking**: We spreken hier over versionering van de _data_, niet van de _controle_ (API).
-Deze specificatie maakt geen uitspraak over hoe APIs geversioneerd moeten worden,
+Deze specificatie maakt geen uitspraak over hoe API's geversioneerd moeten worden,
 aangezien hier verschillende werkbare technieken voor bestaan.
-In bouwblok-gebaseerde hypermedia APIs is versionering van de API voor clients niet noodzakelijk.
+In bouwblok-gebaseerde hypermedia API's is versionering van de API voor clients niet noodzakelijk.
 Generieke clients dienen controle die beschreven staat in server responses automatisch te herkennen,
 en op basis daarvan operaties op de API uit te voeren.
 Indien een API wijzigt, dient de beschrijving van de controle ook gewijzigd te worden,
 waardoor clients automatisch kunnen werken met deze nieuwe versie.
-Versionering van APIs is hier echter orthogonaal mee,
-wat wilt zeggen dat APIs _mogen_ geversioneerd worden,
+Versionering van API's is hier echter orthogonaal mee,
+wat wilt zeggen dat API's _mogen_ geversioneerd worden,
 zolang de generieke beschrijvingen correct gewijzigd worden bij aanpassingen.
 
 ## Nakomingsniveaus
@@ -30,14 +30,14 @@ zolang de generieke beschrijvingen correct gewijzigd worden bij aanpassingen.
 ### HTTP
 
 Indien temporele versionering van toepassing is
-dient het [Memento raamwerk](https://tools.ietf.org/html/rfc7089) gebruikt te worden.
+_MOET_ het [Memento raamwerk](https://tools.ietf.org/html/rfc7089) gebruikt te worden.
 Hiermee kunnen resources via HTTP headers aanduiden in welk temporele versie ze zich bevinden,
 door middel van een tijdsannotatie.
 Verder laat Memento clients toe om een bepaalde versie van een resource op te vragen
 met [_datetime negotiation_](https://mementoweb.org/guide/rfc/#overview-datetime-conneg).
 
-Indien versies _atemporeel_ bestaan er geen standaarden.
-Hiervoor kunnen bijvoorbeeld [`alternate` link headers](https://www.w3.org/Protocols/9707-link-header.html)
+Indien versies _atemporeel_ gedefinieerd zijn, bestaan er geen standaarden.
+Hiervoor _MAG_ bijvoorbeeld [`alternate` link headers](https://www.w3.org/Protocols/9707-link-header.html)
 gebruikt worden om verschillende versies van een resource aan te duiden,
 waarbij de _laatste_ versie van de resource op een vaste link gezet kan worden,
 en clients via een [HTTP 307 redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307)
@@ -48,9 +48,9 @@ naar de geversioneerde URL gestuurd kan worden.
 Op HTTP niveau kunnen we enkel de versie van _volledige resources_ beschrijven.
 Op semantisch niveau kunnen we RDF statements op meer granulair annoteren.
 
-Indien de versionering temporeel is dient het [`prov:generatedAtTime`](https://www.w3.org/TR/prov-o/#generatedAtTime)
+Indien de versionering temporeel is _MOET_ het [`prov:generatedAtTime`](https://www.w3.org/TR/prov-o/#generatedAtTime)
 predikaat gebruikt te worden.
-Indien een atemporele versionering van toepassing is kunnen niet gestandardiseerde ontologieën gebruikt worden,
+Indien een atemporele versionering van toepassing is _MAG_ een niet gestandardiseerde ontologie gebruikt worden,
 zoals bijvoorbeeld [`ver:relatedVersion`](http://semweb.datasciencelab.be/ns/version/#relatedVersion).
 
 ## Code voorbeelden
