@@ -2,7 +2,7 @@ Discussie: [#10](https://github.com/pietercolpaert/generieke-hypermedia-api/issu
 
 # Versionering
 
-Data blijft zelfden statisch,
+Data blijft zelden statisch,
 daarom is het belangrijk dat resources gewijzigd kunnen worden
 wanneer de achterliggende data wijzigt.
 Daarbovenop is het soms ook belangrijk dat _eerdere versies_
