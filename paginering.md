@@ -129,8 +129,8 @@ Onderstaande reeks stappen definieert een algoritme die door een generieke clien
 
 1. Als de Link headers een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
 2. Anders, als de response op root-level een `@type` key (JSON-LD) of `http://www.w3.org/1999/02/22-rdf-syntax-ns#type` predikaat (RDF Triples) heeft met als waarde `PartialCollection` of `http://www.w3.org/ns/hydra/core#PartialCollection`, gebruik de `next`, `last`, `first` of `previous` attributen om de paginering te initialiseren.
-3. Anders, als de response een `_links` node bevat met als keys `next`, `last`, `first` of `prev`, gebruik de corresponderende waarde om de paginering te initialiseren.
-4. Anders, als de response een `links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
+3. Anders, als de response een `links` node bevat met als keys `next`, `last`, `first` of `prev`, gebruik de corresponderende waarde om de paginering te initialiseren.
+4. Anders, als de response een `_links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
 
 ## Herbruikbare library
 

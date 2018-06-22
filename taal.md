@@ -24,7 +24,7 @@ HTTP header beschikbaar te zijn voor de resource binnen een server response.
 
 Voor het toelaten van de **selectie** van de taal van een resource _MOET_
 een server de [`Accept-Language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language)
-in de client request correct te behandelen, zodat [_HTTP language negotiation_](https://www.w3.org/International/questions/qa-when-lang-neg)
+in de client request correct behandelen, zodat [_HTTP language negotiation_](https://www.w3.org/International/questions/qa-when-lang-neg)
 kan plaats vinden.
 
 ### Semantisch
