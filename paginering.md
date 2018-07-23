@@ -163,10 +163,12 @@ De JSON respons bevat informatie voor paginering in een `links` node.
 
 Onderstaande reeks stappen definieert een algoritme die door een generieke client kan worden toegepast om gebruik te maken van paginering.
 
+Namespace prefix rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+Namespace prefix hydra: http://www.w3.org/ns/hydra/core#
+
 1. Als de Link headers een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
-2. Anders, als de response op root-level een `@type` key (JSON-LD) of `http://www.w3.org/1999/02/22-rdf-syntax-ns#type` predikaat (RDF Triples) heeft met als waarde `PartialCollection` of `http://www.w3.org/ns/hydra/core#PartialCollection`, gebruik de `next`, `last`, `first` of `previous` attributen om de paginering te initialiseren.
-3. Anders, als de response een `links` node bevat met als keys `next`, `last`, `first` of `prev`, gebruik de corresponderende waarde om de paginering te initialiseren.
-4. Anders, als de response een `_links` node bevat met als child nodes `next`, `last`, `first` of `prev`, gebruik de corresponderende `href` child nodes om de paginering te initialiseren.
+2. Anders, als de response header `application/ld+json` als Content-Type bevat, gebruik het [JSON-LD 1.1 processing algoritme](https://json-ld.org/spec/FCGS/json-ld-api/20180607/#expansion-algorithms) om de response om te zetten in zijn geëxpandeerde vorm.
+3. Als de response een object bevat met als attribuut `rdfs:type`  met de waarde `hydra:PartialCollection`, gebruik de `hydra:next`, `hydra:last`, `hydra:first` of `hydra:previous` attributen om de paginering te initialiseren.
 
 ## Herbruikbare library
 

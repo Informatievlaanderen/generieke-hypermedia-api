@@ -8,7 +8,7 @@ CRUD of Create, Read, Update & Delete zijn de vier basisoperaties die op resourc
 * Update: wijzigen van gegevens over een specifieke resource
 * Delete: verwijderen van een resource
 
-Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat CRUD acties te herkennen die toegelaten zijn op een bepaalde resource.
+Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat deze basis operaties te herkennen die toegelaten zijn op een bepaalde resource.
 
 ## Nakomingsniveaus
 
@@ -18,11 +18,26 @@ Een server _MOET_ ondersteuning bieden voor volgende methodes:
 
 + [Linked Data Platform](https://www.w3.org/TR/ldp/)
 
+Daarnaast _MOET_ een API HTTP verbs gebruiken in lijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
+
+Onderstaande tabel geeft aan welke HTTP verbs _ZOUDEN_ ondersteund moeten worden door een API. De operatie idempotentie _MOET_ voldaan worden. 
+
+Methode  | Omschrijving  | Is idempotent | CRUD operatie
+-------- | ------------- | ------------- | -------------
+GET     | Geef de huidige waarde van een object. | True | Read
+PUT     | Vervang een object of, wanneer van toepassing, creëer een nieuw object. | True | Update
+DELETE  | Delete een object | True | Delete
+POST    | Creëer een nieuw object gebaseerd op de data zoals voorzien in de request body, of voer een commando uit. | False | Create
+HEAD    | Geef de metadata van een object voor een GET response terug. Resources die de GET methode ondersteunen _MOGEN_ ook de HEAD methode ondersteunen. | True | Read
+PATCH   | Voer een gedeeltelijke update uit op een object. | False | Update
+
 ### Semantisch
 
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
 
 + [Hydra](http://www.hydra-cg.com/spec/latest/core/)
+
+Ook hierd geldt dat het gebruik van HTTP verbs in lijn moet zijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
 
 ## Code voorbeelden
 
@@ -45,7 +60,7 @@ Allow: GET,PUT,DELETE
 
 ### Hydra
 
-De toegelaten operaties worden meegegeven in de response body via de eigenschap [hydra:operation](http://www.w3.org/ns/hydra/core#operation).
+De toegelaten operaties worden meegegeven in de response body via de eigenschap [hydra:operation](http://www.w3.org/ns/hydra/core#operation). Verder kan, waar relevant, de verwachte input worden meegegevens via de eigenschap [hydra:expects](http://www.w3.org/ns/hydra/core#expects).
 
 ```json
 {
@@ -56,11 +71,12 @@ De toegelaten operaties worden meegegeven in de response body via de eigenschap 
   "operation": [
     {
       "@type": "Operation",
-      "method": "DELETE"
+      "method": "GET"
     },
     {
       "@type": "Operation",
-      "method": "PUT"
+      "method": "PUT",
+      "expects": "http://www.w3.org/ns/regorg#RegisteredOrganization"
     }
   ]
 }
@@ -70,7 +86,13 @@ De toegelaten operaties worden meegegeven in de response body via de eigenschap 
 
 Onderstaande reeks stappen definieert een algoritme die door een generieke client kan worden toegepast om CRUD operaties te herkennen.
 
-__TODO__
+Namespace prefix rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+Namespace prefix hydra: http://www.w3.org/ns/hydra/core#
+
+1. Als de ALLOW header van een Resource response een GET, PUT, DELETE, POST, HEAD en/of PATCH methode bevat, voorzie in een generieke afhandeling in lijn met [RFC7231](https://tools.ietf.org/html/rfc7231). 
+2. Anders, als de response header `application/ld+json` als Content-Type bevat, gebruik het [JSON-LD 1.1 processing algoritme](https://json-ld.org/spec/FCGS/json-ld-api/20180607/#expansion-algorithms) om de response om te zetten in zijn geëxpandeerde vorm.
+3. Als de response een object bevat met als attribuut `hydra:operation`, gebruik het corresponderende `hydra:Operation` object om te voorzien in een generieke afhandeling in lijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
+4. Als de `hydra:Operation` een attribuut `hydra:expects` bevat, voer een `GET` operatie uit op de corresponderende resource om de lijst met ondersteunde attributen (`hydra:suppertProperty`) voor een create of update operatie te bekomen. Gebruik deze response om eventueel een dynamisch input formulier op te stellen.
 
 ## Herbruikbare library
 
