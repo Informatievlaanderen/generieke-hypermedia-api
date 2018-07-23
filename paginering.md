@@ -20,12 +20,29 @@ Een server _MOET_ ondersteuning bieden voor volgende methodes:
 
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
 
-+ [Draft Hydra specificatie voor paginering](https://github.com/HydraCG/Specifications/blob/master/drafts/use-cases/3.2.pagination.md)
++ [Hydra Core Vocabulary](https://www.hydra-cg.com/spec/latest/core/)
 
-Daarnaast _MAG_ een server volgende methodes ondersteunen:
+Daarnaast _MAG_ een server volgende specificaties ondersteunen:
 
 + [Hypertext Application Language (HAL) Internet Draft](http://stateless.co/hal_specification.html)
 + [JSON API Pagination](http://jsonapi.org/format/#fetching-pagination)
+
+In dit laatste geval _MOET_ de JSON payload geannoteerd te worden met een JSON-LD context om de HAL of JSON API notatie voor paginering te normaliseren naar de Hydra vocabulary. Onderstaande JSON-LD context is gebaseerd op de JSON-LD 1.1 specificatie en laat toe hypermedia controls voor paginering in HAL of JSON API te interpreteren volgens de Hydra vocabulary.
+
+```json
+{
+  "@context": {
+     "hydra": "http://www.w3.org/ns/hydra/core#",
+     "first": { "@id": "hydra:first", "@type": "@id" },
+     "last": { "@id": "hydra:last", "@type": "@id" },
+     "next": { "@id": "hydra:next", "@type": "@id" },
+     "prev": { "@id": "hydra:previous", "@type": "@id" },
+     "_links": "@nest",
+     "links": "@nest", 
+     "href": "@id",
+  }
+}
+```
 
 ## Code voorbeelden
 
@@ -54,7 +71,26 @@ Volgende relaties worden ondersteund:
 
 De JSON(-LD) respons bevat informatie voor paginering op basis van het Hydra vocabularium.
 
-__TODO__
+```json
+{
+  "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+  "@id": "https://hostname/api/resource?page=3",
+  "@type": "PartialCollection",
+  "next": "/api/resource?page=4",
+  "last": "/api/resource?page=50",
+  "first": "/api/resource",
+  "previous": "/api/resource?page=2",
+  "totalItems": 2,
+  "member": [
+      {
+          "@id": "/api/resource/5"
+      },
+      {
+          "@id": "/api/resource/6"
+      }
+  ]
+}
+```
 
 ### HAL
 
