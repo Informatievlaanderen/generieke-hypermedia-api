@@ -47,12 +47,10 @@ q | serialisatie  | Linked Data? | Quads
 
 * [Paginering](paginering.md)
 * [CRUD operaties](crud-operaties.md)
-* [Graph queries](graph-queries.md)
 * [Full text search](full-text-search.md)
-* [Geo-spatial features](geospatial.md)
 * [Taal-selectie/ontdekking](taal.md)
-* [Versionering](versionering.md)
-* [Metadatering](metadatering.md)
+* [Versionering van data](versionering.md)
+* [Metadatering van API's](metadatering.md)
 * [Tijdsannotatie](tijdsannotatie.md)
 
 ## Terminologie
