@@ -7,11 +7,6 @@ __Eerste draft gepland: juli 2018__
 ## Discussieer mee
 
 Via de issue tracker kan je online mee discussiëren over wat in de specificatie moet en wat niet: https://github.com/informatievlaanderen/generieke-hypermedia-api/issues
-
-Wil je fysiek mee aanwezig zijn? Er is nog één publieke workshop gepland in juni:
- * 2018-06-22 van 14:00 tot 15:30 - Herman Teirlinck - 01.23 - Léon Stynen
- 
- Inschrijven kan via https://overheid.vlaanderen.be/opleiding/publieke-werkgroepen-oslo-technische-standaard-voor-apis
  
 ## Scope
 
