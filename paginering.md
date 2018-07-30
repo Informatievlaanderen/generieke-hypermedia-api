@@ -166,7 +166,7 @@ Onderstaande reeks stappen definieert een algoritme die door een generieke clien
 Namespace prefix rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 Namespace prefix hydra: http://www.w3.org/ns/hydra/core#
 
-1. Als de Link headers een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
+1. Als de Link headers van de response een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
 2. Anders, als de response header `application/ld+json` als Content-Type bevat, gebruik het [JSON-LD 1.1 processing algoritme](https://json-ld.org/spec/FCGS/json-ld-api/20180607/#expansion-algorithms) om de response om te zetten in zijn geëxpandeerde vorm.
 3. Als de response een object bevat met als attribuut `rdfs:type`  met de waarde `hydra:PartialCollection`, gebruik de `hydra:next`, `hydra:last`, `hydra:first` of `hydra:previous` attributen om de paginering te initialiseren.
 

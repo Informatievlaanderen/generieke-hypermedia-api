@@ -35,7 +35,7 @@ PATCH   | Voer een gedeeltelijke update uit op een object. | False | Update
 
 Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
 
-+ [Hydra](http://www.hydra-cg.com/spec/latest/core/)
++ [Hydra Core Vocabulary](http://www.hydra-cg.com/spec/latest/core/)
 
 Ook hierd geldt dat het gebruik van HTTP verbs in lijn moet zijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
 
@@ -76,7 +76,39 @@ De toegelaten operaties worden meegegeven in de response body via de eigenschap 
     {
       "@type": "Operation",
       "method": "PUT",
-      "expects": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+      "expects": "schema:Event"
+    }
+  ]
+}
+```
+
+De informatie die verwacht wordt als input door de API (`hydra:expects`) kan verder gespecifieerd worden door gebruik te maken van de [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/):
+
+```json
+{
+  "@context": {
+    "hydra": "http://www.w3.org/ns/hydra/context.jsonld",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "schema": "https://schema.org/"
+  },
+  "@id": "/api/resource/1",
+  "operation": [
+    {
+      "@type": "Operation",
+      "method": "PUT",
+      "expects": {
+        "@id": "schema:Event",
+        "sh:targetClass": "schema:Event",
+        "sh:property": [
+          {
+             "sh:name": "eventName",
+             "sh:description": "Een naam voor het event",
+             "sh:path": "schema:eventName",
+             "sh:minCount": "1",
+             "sh:maxCount": "1"             
+          }
+        ]
+      }
     }
   ]
 }

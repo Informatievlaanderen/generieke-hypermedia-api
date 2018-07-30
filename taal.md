@@ -9,6 +9,10 @@ Anderzijds gaat de **selectie** van een taal een stap verder,
 hierbij kunnen protocollen zoals [_HTTP language negotiation_](https://www.w3.org/International/questions/qa-when-lang-neg)
 door clients gebruikt worden om een bepaalde resource in een gegeven taal op te vragen.
 
+Een API _MOET_ minimaal ondersteuning bieden voor één van de volgende taalcodes:
+* nl-BE
+* nl
+
 **Opmerking**: We spreken hier over de taal van de _data_, niet van de _controle_.
 Hier zijn bijvoorbeeld de taal van de naam en beschrijving van resources van belang.
 De taal die (eventueel) gebruikt wordt binnen URLs of andere API-specifieke benamingen is irrelevant,
@@ -38,7 +42,7 @@ gebruikt worden, ofwel kan een eigen hypermedia operatie beschreven worden met e
 
 **Opmerking**: De HTTP en Semantische nakomingsniveaus moeten compatibel zijn met elkaar.
 Dit wilt zeggen dat wanneer een `Content-Language` header beschikbaar binnen de (RDF) response voor een resource,
-dat _minstens_ _language tagged strings_ in die taal beschikbaar moeten zijn.
+dat _minstens_ __language tagged strings__ in die taal beschikbaar moeten zijn.
 
 ## Code voorbeelden
 

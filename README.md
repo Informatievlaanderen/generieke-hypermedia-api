@@ -34,9 +34,10 @@ q | serialisatie  | Linked Data? | Quads
 0.9 | text/html | Kan (RDFa of JSON-LD snippets) | kan (JSON-LD snippets) 
 0.7 | application/n-triples | Ja | Nee
 0.7 | text/turtle  | Ja | Nee 
-0.7 | application/rdf+xml | Ja (weinig gebruikt) | Nee
-0.6 | non-linked data specificatie (json, xml, csv...) | Nee | Nee
+0.5 | application/rdf+xml* | Ja (weinig gebruikt) | Nee
+0.4 | non-linked data specificatie (json, xml, csv...) | Nee | Nee
 
+_\*: RDF/XML staat laag op de voorkeurslijst omdat andere, modernere serialisaties een betere mens-leesbaarheid bieden en omdat RDF/XML niet goed samenwerkt met traditionele XML tooling zoals XSLT en XML Schema._
 
 ## Bouwblokken
 
@@ -47,6 +48,10 @@ q | serialisatie  | Linked Data? | Quads
 * [Versionering van data](versionering.md)
 * [Metadatering van API's](metadatering.md)
 * [Tijdsannotatie](tijdsannotatie.md)
+
+## Hypermedia controls buiten de scope van deze bouwblokken
+
+In het algemeen, voor hypermedia controls die niet gespecifieerd worden door één van bovenstaande bouwblokken, _MOET_ de betekenis gedefinieerd zijn in [RFC 5988](https://tools.ietf.org/html/rfc5988) met betrekking tot Web Linking of in een gedragen RDF vocabularium zoals bijvoorbeeld [Dublin Core Terms](http://dublincore.org/documents/dcmi-terms/), [Schema.org](https://schema.org/)...
 
 ## Terminologie
 
