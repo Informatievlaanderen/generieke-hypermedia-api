@@ -86,5 +86,6 @@ https://mementoweb.org/guide/rfc/#overview-datetime-conneg
 
 ## Herbruikbare library
 
+* [generic-hypermedia-api-client](https://github.com/Informatievlaanderen/generic-hypermedia-api-client)
 * https://www.npmjs.com/package/wayback-machine
 * https://www.npmjs.com/package/memento-client

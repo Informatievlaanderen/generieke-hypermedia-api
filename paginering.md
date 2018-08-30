@@ -172,4 +172,5 @@ Namespace prefix hydra: http://www.w3.org/ns/hydra/core#
 
 ## Herbruikbare library
 
-- Voor clients: https://github.com/pietercolpaert/extract-page-controls
+* [generic-hypermedia-api-client](https://github.com/Informatievlaanderen/generic-hypermedia-api-client)
+* Voor clients: https://github.com/pietercolpaert/extract-page-controls

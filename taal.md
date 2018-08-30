@@ -90,4 +90,5 @@ https://www.ietf.org/rfc/rfc4647.txt
 
 ## Herbruikbare library
 
+* [generic-hypermedia-api-client](https://github.com/Informatievlaanderen/generic-hypermedia-api-client)
 * https://www.npmjs.com/package/accept-language-negotiator

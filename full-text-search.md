@@ -154,4 +154,4 @@ Onderstaande reeks stappen definieert een algoritme die door een generieke clien
 
 ## Herbruikbare library
 
-__TODO__
+* [generic-hypermedia-api-client](https://github.com/Informatievlaanderen/generic-hypermedia-api-client)

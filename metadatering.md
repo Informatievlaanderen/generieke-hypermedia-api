@@ -324,4 +324,4 @@ __TODO__
 
 ## Herbruikbare library
 
-__TODO__
+* [generic-hypermedia-api-client](https://github.com/Informatievlaanderen/generic-hypermedia-api-client)
