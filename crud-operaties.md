@@ -37,7 +37,7 @@ Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgen
 
 + [Hydra Core Vocabulary](http://www.hydra-cg.com/spec/latest/core/)
 
-Ook hierd geldt dat het gebruik van HTTP verbs in lijn moet zijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
+Ook hier geldt dat het gebruik van HTTP verbs in lijn moet zijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
 
 ## Code voorbeelden
 
