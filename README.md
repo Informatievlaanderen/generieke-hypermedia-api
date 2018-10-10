@@ -44,6 +44,7 @@ _\*: RDF/XML staat laag op de voorkeurslijst omdat andere, modernere serialisati
 * [Paginering](paginering.md)
 * [CRUD operaties](crud-operaties.md)
 * [Taal-selectie/ontdekking](taal.md)
+* [Full text search](full-text-search.md)
 
 ## Hypermedia controls buiten de scope van deze bouwblokken
 
