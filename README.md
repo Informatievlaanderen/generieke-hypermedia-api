@@ -2,7 +2,7 @@
 
 We bouwen een specificatie van generieke bouwblokken voor API’s in Vlaanderen. Dit is deel van de [Werkgroep data-standaarden van het Stuurorgaan](https://overheid.vlaanderen.be/stuurorgaan-werkgroepen).
 
-__Eerste draft gepland: juli 2018__
+__Status:__ Eerste draft van 3 bouwblokken ter validatie voorgelegd
 
 ## Discussieer mee
 
@@ -43,15 +43,11 @@ _\*: RDF/XML staat laag op de voorkeurslijst omdat andere, modernere serialisati
 
 * [Paginering](paginering.md)
 * [CRUD operaties](crud-operaties.md)
-* [Full text search](full-text-search.md)
 * [Taal-selectie/ontdekking](taal.md)
-* [Versionering van data](versionering.md)
-* [Metadatering van API's](metadatering.md)
-* [Tijdsannotatie](tijdsannotatie.md)
 
 ## Hypermedia controls buiten de scope van deze bouwblokken
 
-In het algemeen, voor hypermedia controls die niet gespecifieerd worden door één van bovenstaande bouwblokken, _MOET_ de betekenis gedefinieerd zijn in [RFC 5988](https://tools.ietf.org/html/rfc5988) met betrekking tot Web Linking of in een gedragen RDF vocabularium zoals bijvoorbeeld [Dublin Core Terms](http://dublincore.org/documents/dcmi-terms/), [Schema.org](https://schema.org/)...
+Voor hypermedia controls die niet gespecifieerd worden door één van bovenstaande bouwblokken, _MOET_ de betekenis gedefinieerd zijn in [RFC 5988](https://tools.ietf.org/html/rfc5988) met betrekking tot Web Linking of in een gedragen RDF vocabularium zoals bijvoorbeeld [Dublin Core Terms](http://dublincore.org/documents/dcmi-terms/), [Schema.org](https://schema.org/)...
 
 ## Terminologie
 
