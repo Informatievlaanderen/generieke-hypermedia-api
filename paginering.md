@@ -75,7 +75,7 @@ De JSON(-LD) respons bevat informatie voor paginering op basis van het Hydra voc
 {
   "@context": "http://www.w3.org/ns/hydra/context.jsonld",
   "@id": "https://hostname/api/resource?page=3",
-  "@type": "PartialCollection",
+  "@type": "PartialCollectionView",
   "next": "/api/resource?page=4",
   "last": "/api/resource?page=50",
   "first": "/api/resource",
@@ -168,7 +168,7 @@ Namespace prefix hydra: http://www.w3.org/ns/hydra/core#
 
 1. Als de Link headers van de response een `rel` attribuut bevatten met `next`, `last`, `first`, `previous` of `prev`, gebruik de correspondere links om de paginering te initialiseren.
 2. Anders, als de response header `application/ld+json` als Content-Type bevat, gebruik het [JSON-LD 1.1 processing algoritme](https://json-ld.org/spec/FCGS/json-ld-api/20180607/#expansion-algorithms) om de response om te zetten in zijn geëxpandeerde vorm.
-3. Als de response een object bevat met als attribuut `rdfs:type`  met de waarde `hydra:PartialCollection`, gebruik de `hydra:next`, `hydra:last`, `hydra:first` of `hydra:previous` attributen om de paginering te initialiseren.
+3. Als de response een object bevat met als attribuut `rdfs:type`  met de waarde `hydra:PartialCollectionView`, gebruik de `hydra:next`, `hydra:last`, `hydra:first` of `hydra:previous` attributen om de paginering te initialiseren.
 
 ## Herbruikbare library
 
