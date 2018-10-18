@@ -45,6 +45,8 @@ _\*: RDF/XML staat laag op de voorkeurslijst omdat andere, modernere serialisati
 * [CRUD operaties](crud-operaties.md)
 * [Taal-selectie/ontdekking](taal.md)
 
+Een implementatie van deze specificatie is vrij om te kiezen welke bouwblokken relevant zijn voor implementatie. Bijvoorbeeld indien een API geen paginering functionaliteit aanbiedt, hoeft de bijhorende bouwblok niet geïmplementeerd te worden om conform deze specificatie te zijn.
+
 ## Hypermedia controls buiten de scope van deze bouwblokken
 
 Voor hypermedia controls die niet gespecifieerd worden door één van bovenstaande bouwblokken, _MOET_ de betekenis gedefinieerd zijn in [RFC 5988](https://tools.ietf.org/html/rfc5988) met betrekking tot Web Linking of in een gedragen RDF vocabularium zoals bijvoorbeeld [Dublin Core Terms](http://dublincore.org/documents/dcmi-terms/), [Schema.org](https://schema.org/)...
