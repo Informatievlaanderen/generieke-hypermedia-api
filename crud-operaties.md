@@ -14,13 +14,11 @@ Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat d
 
 ### HTTP
 
-Een server _MOET_ ondersteuning bieden voor volgende methodes:
+Een server _MOET_ ondersteuning bieden voor één of meerdere HTTP verbs. Welke HTTP verbs precies ondersteund worden voor een bepaalde resource dient meegegeven te worden in de HTTP 'Allow' header.
 
-+ [Linked Data Platform](https://www.w3.org/TR/ldp/)
+Daarnaast _MOET_ een API HTTP verbs gebruiken in lijn met [RFC7231](https://tools.ietf.org/html/rfc7231) en in het [RFC5789](https://tools.ietf.org/html/rfc5789) voor de PATCH methode.
 
-Daarnaast _MOET_ een API HTTP verbs gebruiken in lijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
-
-Onderstaande tabel geeft aan welke HTTP verbs _ZOUDEN_ ondersteund moeten worden door een API. De operatie idempotentie _MOET_ voldaan worden. 
+Onderstaande tabel geeft aan welke HTTP verbs _ZOUDEN_ ondersteund kunnen worden door een API (één of meerdere afhankelijk van de functionaliteit aangeboden door de API). De operatie idempotentie _MOET_ voldaan worden. 
 
 Methode  | Omschrijving  | Is idempotent | CRUD operatie
 -------- | ------------- | ------------- | -------------
@@ -28,14 +26,14 @@ GET     | Geef de huidige waarde van een object. | True | Read
 PUT     | Vervang een object of, wanneer van toepassing, creëer een nieuw object. | True | Update
 DELETE  | Delete een object | True | Delete
 POST    | Creëer een nieuw object gebaseerd op de data zoals voorzien in de request body, of voer een commando uit. | False | Create
-HEAD    | Geef de metadata van een object voor een GET response terug. Resources die de GET methode ondersteunen _MOGEN_ ook de HEAD methode ondersteunen. | True | Read
+HEAD    | Geef de header van een object voor een GET response terug. Resources die de GET methode ondersteunen _MOGEN_ ook de HEAD methode ondersteunen. | True | Read
 PATCH   | Voer een gedeeltelijke update uit op een object. | False | Update
 
 ### Semantisch
 
-Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende methodes ondersteunen:
+Een server die ondersteuning wil bieden voor Linked Data _MOET_ bijkomend volgende specificatie ondersteunen:
 
-+ [Hydra Core Vocabulary](http://www.hydra-cg.com/spec/latest/core/)
++ [Hydra Core Vocabulary](http://www.hydra-cg.com/spec/latest/core/) 'Resources' en 'Operations'
 
 Ook hier geldt dat het gebruik van HTTP verbs in lijn moet zijn met [RFC7231](https://tools.ietf.org/html/rfc7231).
 
