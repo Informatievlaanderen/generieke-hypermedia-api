@@ -20,6 +20,8 @@ aangezien clients hier geen interpretatie van (zouden) moeten doen.
 
 ## Nakomingsniveaus
 
+Zie ook: https://github.com/Informatievlaanderen/generieke-hypermedia-api#nakomingsniveaus
+
 ### HTTP
 
 Voor het toelaten van de **detectie** van de taal van een resource _MOET_
