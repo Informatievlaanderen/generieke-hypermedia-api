@@ -10,6 +10,8 @@ Deze specificatie beschrijft een abstract algoritme dat een generieke client toe
 
 ## Nakomingsniveaus
 
+Zie ook: https://github.com/Informatievlaanderen/generieke-hypermedia-api#nakomingsniveaus
+
 ### HTTP
 
 Een server _MOET_ ondersteuning bieden voor volgende methodes:
