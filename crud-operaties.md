@@ -12,6 +12,8 @@ Deze sectie beschrijft een abstract algoritme dat een generieke client toelaat d
 
 ## Nakomingsniveaus
 
+Zie ook: https://github.com/Informatievlaanderen/generieke-hypermedia-api#nakomingsniveaus
+
 ### HTTP
 
 Een server _MOET_ ondersteuning bieden voor één of meerdere HTTP verbs. Welke HTTP verbs precies ondersteund worden voor een bepaalde resource dient meegegeven te worden in de HTTP 'Allow' header.
