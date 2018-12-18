@@ -2,7 +2,8 @@
 
 We bouwen een specificatie van generieke bouwblokken voor API’s in Vlaanderen. Dit is deel van de [Werkgroep data-standaarden van het Stuurorgaan](https://overheid.vlaanderen.be/stuurorgaan-werkgroepen).
 
-__Status:__ Eerste draft van 3 bouwblokken ter validatie voorgelegd
+__Versie:__ v1.0 (8 november 2018)
+__Status:__ deze specificatie werd op 8 november 2018 erkend door de Werkgroep Datastandaarden van het Stuurorgaan Vlaams Informatie- en ICT-beleid.
 
 ## Discussieer mee
 
